@@ -14,8 +14,13 @@ const DEMO_ACCOUNT = {
 };
 
 export async function POST(request: Request) {
+    let email = '';
+    let password = '';
+    
     try {
-        const { email, password } = await request.json();
+        const body = await request.json();
+        email = body.email || '';
+        password = body.password || '';
 
         if (!email || !password) {
             return NextResponse.json(
@@ -87,17 +92,12 @@ export async function POST(request: Request) {
         console.error('Login error:', error);
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         
-        // Try to parse request body for demo account fallback
-        try {
-            const body = await request.json();
-            if (body.email === DEMO_ACCOUNT.email && body.password === DEMO_ACCOUNT.password) {
-                return NextResponse.json({
-                    access_token: 'mock_access_token_' + Date.now(),
-                    user: DEMO_ACCOUNT.user,
-                });
-            }
-        } catch (parseError) {
-            // Ignore parse errors
+        // Even on unexpected errors, allow demo account as fallback
+        if (email === DEMO_ACCOUNT.email && password === DEMO_ACCOUNT.password) {
+            return NextResponse.json({
+                access_token: 'mock_access_token_' + Date.now(),
+                user: DEMO_ACCOUNT.user,
+            });
         }
         
         return NextResponse.json(
