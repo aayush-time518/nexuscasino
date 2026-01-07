@@ -162,7 +162,7 @@ async function main() {
             title: 'Lightning Roulette',
             provider: 'Evolution Gaming',
             imageUrl:
-                'https://images.unsplash.com/photo-1627831388561-c84b73b3ea3f',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_1c5620a0a-1765300253846.png',
             alt: 'Electric roulette wheel with lightning effects and modern studio lighting',
             category: 'live',
             isNew: true,

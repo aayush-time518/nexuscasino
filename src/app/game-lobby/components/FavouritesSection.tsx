@@ -37,7 +37,7 @@ const FavoritesSection = () => {
       id: 3,
       title: "Gonzo's Quest",
       image:
-        'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+        'https://img.rocket.new/generatedImages/rocket_gen_img_153c5dfd3-1764657156330.png',
       alt: 'Adventure slot game featuring explorer character with ancient Aztec temple ruins',
       lastPlayed: '1 day ago',
     },

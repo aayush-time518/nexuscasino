@@ -31,7 +31,7 @@ const HeroBanner = () => {
       title: 'Mega Fortune Jackpot',
       subtitle: 'Progressive jackpot now at $2.4M',
       image:
-        'https://images.unsplash.com/photo-1561450098-bea23aa64db5',
+        'https://img.rocket.new/generatedImages/rocket_gen_img_1828fb25d-1764674107002.png',
       alt: 'Luxury golden slot machine with sparkling diamonds and coins on dark casino background',
       ctaText: 'Play Now',
       ctaLink: '/game-play-interface',
