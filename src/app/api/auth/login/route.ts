@@ -5,6 +5,13 @@ export async function POST(request: Request) {
     try {
         const { email, password } = await request.json();
 
+        if (!email || !password) {
+            return NextResponse.json(
+                { message: 'Email and password are required' },
+                { status: 400 }
+            );
+        }
+
         // Find user by email
         const user = await prisma.user.findUnique({
             where: { email },
@@ -40,8 +47,9 @@ export async function POST(request: Request) {
         });
     } catch (error) {
         console.error('Login error:', error);
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         return NextResponse.json(
-            { message: 'Internal server error' },
+            { message: 'Internal server error', error: errorMessage },
             { status: 500 }
         );
     }
