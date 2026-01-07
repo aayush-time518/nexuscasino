@@ -72,7 +72,7 @@ async function main() {
             title: 'Book of Dead',
             provider: "Play'n GO",
             imageUrl:
-                'https://img.rocket.new/generatedImages/rocket_gen_img_10b2013a0-1764674114124.png',
+                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
             alt: 'Ancient Egyptian themed slot with golden pharaoh mask and hieroglyphics on dark background',
             category: 'slots',
             hasDemo: true,
