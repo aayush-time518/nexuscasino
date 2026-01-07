@@ -87,13 +87,17 @@ export async function POST(request: Request) {
         console.error('Login error:', error);
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
         
-        // Even on unexpected errors, allow demo account as fallback
-        const { email, password } = await request.json().catch(() => ({ email: '', password: '' }));
-        if (email === DEMO_ACCOUNT.email && password === DEMO_ACCOUNT.password) {
-            return NextResponse.json({
-                access_token: 'mock_access_token_' + Date.now(),
-                user: DEMO_ACCOUNT.user,
-            });
+        // Try to parse request body for demo account fallback
+        try {
+            const body = await request.json();
+            if (body.email === DEMO_ACCOUNT.email && body.password === DEMO_ACCOUNT.password) {
+                return NextResponse.json({
+                    access_token: 'mock_access_token_' + Date.now(),
+                    user: DEMO_ACCOUNT.user,
+                });
+            }
+        } catch (parseError) {
+            // Ignore parse errors
         }
         
         return NextResponse.json(
