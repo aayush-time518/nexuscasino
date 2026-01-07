@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String           @id @default(uuid())
+  email               String           @unique
+  fullName            String           @map("full_name")
+  phone               String?
+  dateOfBirth         String?          @map("date_of_birth")
+  address             String?
+  city                String?
+  state               String?
+  zipCode             String?          @map("zip_code")
+  verified            Boolean          @default(false)
+  verificationStatus  String           @default("pending") @map("verification_status")
+  createdAt           DateTime         @default(now()) @map("created_at")
+  updatedAt           DateTime         @updatedAt @map("updated_at")
+  balance             Float            @default(0.0)
+  pendingWithdrawals  Float            @default(0.0) @map("pending_withdrawals")
+  activeBonus         Float            @default(0.0) @map("active_bonus")
+
+  transactions        Transaction[]
+  paymentMethods      PaymentMethod[]
+  loyaltyPoints       LoyaltyPoint?
+
+  @@map("profiles")
+}
+
+model Game {
+  id            Int      @id @default(autoincrement()) // Changed to Int to match frontend mock data
+  title         String
+  provider      String
+  category      String
+  imageUrl      String?  @map("image_url")
+  alt           String?
+  isNew         Boolean  @default(false) @map("is_new")
+  isHot         Boolean  @default(false) @map("is_hot")
+  hasDemo       Boolean  @default(false) @map("has_demo")
+  jackpotAmount Float?   @map("jackpot_amount")
+  createdAt     DateTime @default(now()) @map("created_at")
+  playUrl       String?  @map("play_url")
+  demoUrl       String?  @map("demo_url")
+  isFavorite    Boolean  @default(false) @map("is_favorite") // Added for frontend compatibility
+
+  @@map("games")
+}
+
+model Transaction {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  type           String
+  amount         Float
+  status         String
+  paymentMethod  String?  @map("payment_method")
+  description    String
+  transactionRef String?  @map("transaction_ref")
+  fee            Float    @default(0)
+  gameSession    String?  @map("game_session")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  user           User     @relation(fields: [userId], references: [id])
+
+  @@map("transactions")
+}
+
+model PaymentMethod {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  type       String
+  name       String
+  last4      String
+  expiryDate String?  @map("expiry_date")
+  isVerified Boolean  @default(false) @map("is_verified")
+  isDefault  Boolean  @default(false) @map("is_default")
+  brand      String?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@map("payment_methods")
+}
+
+model Promotion {
+  id               String   @id @default(uuid())
+  title            String
+  description      String
+  bonusAmount      String   @map("bonus_amount")
+  wagerRequirement String   @map("wager_requirement")
+  expiryDate       String   @map("expiry_date")
+  eligibility      String
+  category         String
+  imageUrl         String?  @map("image_url")
+  isFeatured       Boolean  @default(false) @map("is_featured")
+  terms            String
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  @@map("promotions")
+}
+
+model LoyaltyPoint {
+  id        String   @id @default(uuid())
+  userId    String   @unique @map("user_id")
+  points    Int      @default(0)
+  tier      String   @default("Bronze")
+  tierLevel Int      @default(1) @map("tier_level")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("loyalty_points")
+}
