@@ -37,7 +37,7 @@ async function main() {
             title: 'Starburst',
             provider: 'NetEnt',
             imageUrl:
-                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_1606ed4d1-1765251175676.png',
             alt: 'Colorful cosmic slot game with bright stars and gems on purple space background',
             category: 'slots',
             isHot: true,
@@ -50,7 +50,7 @@ async function main() {
             title: 'Mega Fortune',
             provider: 'NetEnt',
             imageUrl:
-                'https://images.unsplash.com/photo-1561450098-bea23aa64db5',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_1828fb25d-1764674107002.png',
             alt: 'Luxury progressive jackpot slot with golden yacht and champagne on blue ocean background',
             category: 'jackpot',
             jackpotAmount: 2456789,
@@ -61,7 +61,7 @@ async function main() {
             title: 'Live Blackjack',
             provider: 'Evolution Gaming',
             imageUrl:
-                'https://images.unsplash.com/photo-1627831388561-c84b73b3ea3f',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_1de78c3b8-1764864557865.png',
             alt: 'Professional dealer in black vest dealing cards at green felt blackjack table',
             category: 'live',
             isHot: true,
@@ -72,7 +72,7 @@ async function main() {
             title: 'Book of Dead',
             provider: "Play'n GO",
             imageUrl:
-                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_10b2013a0-1764674114124.png',
             alt: 'Ancient Egyptian themed slot with golden pharaoh mask and hieroglyphics on dark background',
             category: 'slots',
             hasDemo: true,
@@ -84,7 +84,7 @@ async function main() {
             title: "Gonzo's Quest",
             provider: 'NetEnt',
             imageUrl:
-                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_153c5dfd3-1764657156330.png',
             alt: 'Adventure slot game featuring explorer character with ancient Aztec temple ruins',
             category: 'slots',
             isNew: true,
@@ -96,7 +96,7 @@ async function main() {
             title: 'Roulette Live',
             provider: 'Evolution Gaming',
             imageUrl:
-                'https://images.unsplash.com/photo-1627831388561-c84b73b3ea3f',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_1c024ddd3-1764721991900.png',
             alt: 'Live roulette wheel spinning with professional dealer in elegant casino studio',
             category: 'live',
             hasDemo: false,
@@ -106,7 +106,7 @@ async function main() {
             title: 'Divine Fortune',
             provider: 'NetEnt',
             imageUrl:
-                'https://images.unsplash.com/photo-1561450098-bea23aa64db5',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_10b2013a0-1764674114124.png',
             alt: 'Greek mythology themed progressive jackpot slot with golden Pegasus and ancient columns',
             category: 'jackpot',
             jackpotAmount: 1234567,
@@ -118,7 +118,7 @@ async function main() {
             title: 'Baccarat Live',
             provider: 'Evolution Gaming',
             imageUrl:
-                'https://images.unsplash.com/photo-1627831388561-c84b73b3ea3f',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_196a43df9-1765615885505.png',
             alt: 'Elegant baccarat table with professional dealer and luxury casino interior background',
             category: 'table',
             hasDemo: false,
@@ -128,7 +128,7 @@ async function main() {
             title: 'Reactoonz',
             provider: "Play'n GO",
             imageUrl:
-                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_183e42f03-1766067611213.png',
             alt: 'Colorful alien themed slot game with cute cartoon creatures on cosmic grid background',
             category: 'slots',
             isNew: true,
@@ -150,7 +150,7 @@ async function main() {
             title: 'Immortal Romance',
             provider: 'Microgaming',
             imageUrl:
-                'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+                'https://img.rocket.new/generatedImages/rocket_gen_img_19541e269-1765452489332.png',
             alt: 'Gothic vampire themed slot with mysterious characters on dark castle background',
             category: 'slots',
             isHot: true,

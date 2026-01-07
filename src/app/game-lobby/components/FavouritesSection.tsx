@@ -21,7 +21,7 @@ const FavoritesSection = () => {
       id: 1,
       title: 'Starburst',
       image:
-        'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+        'https://img.rocket.new/generatedImages/rocket_gen_img_1606ed4d1-1765251175676.png',
       alt: 'Colorful cosmic slot game with bright stars and gems on purple space background',
       lastPlayed: '2 hours ago',
     },
@@ -29,7 +29,7 @@ const FavoritesSection = () => {
       id: 2,
       title: 'Book of Dead',
       image:
-        'https://images.unsplash.com/photo-1577495508048-b63587924f3d',
+        'https://img.rocket.new/generatedImages/rocket_gen_img_10b2013a0-1764674114124.png',
       alt: 'Ancient Egyptian themed slot with golden pharaoh mask and hieroglyphics on dark background',
       lastPlayed: '5 hours ago',
     },
