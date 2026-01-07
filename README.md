@@ -1,4 +1,4 @@
-# NexusGamingCasino
+# nexusgamingcasino
 
 A simple prototype casino web application built with Next.js 14, TypeScript, Tailwind CSS, and Prisma.
 
